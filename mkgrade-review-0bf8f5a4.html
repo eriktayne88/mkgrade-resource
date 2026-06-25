@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>信息索引 · mk体育 资料辑录</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f1ea;
+            color: #1f2a3a;
+            line-height: 1.65;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* 深色头图 —— 杂志横幅感 */
+        .hero {
+            background: #0b1420;
+            background-image: radial-gradient(circle at 15% 45%, #1c2a3e 0%, #0a111b 95%);
+            padding: 4rem 1.5rem 3.5rem;
+            text-align: center;
+            color: #e5e7eb;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, #f4f1ea, transparent);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 350;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.6rem;
+            color: #d9d2c0;
+            text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #a7b1c2;
+            border-top: 1px solid #3a4860;
+            display: inline-block;
+            padding-top: 0.8rem;
+            margin-top: 0.3rem;
+            letter-spacing: 0.08em;
+        }
+
+        /* 浅色正文区——三段+卡片式 */
+        .container {
+            max-width: 960px;
+            margin: -0.5rem auto 0;
+            padding: 2rem 1.5rem 3rem;
+            background: #f4f1ea;
+            position: relative;
+            z-index: 2;
+        }
+
+        .feature-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 2.2rem;
+        }
+
+        .card {
+            background: #ffffffec;
+            border-radius: 24px;
+            padding: 2rem 2rem 2.2rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.03);
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .card .tag {
+            display: inline-block;
+            background: #dce3ef;
+            color: #1f2a3a;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            padding: 0.2rem 0.9rem;
+            border-radius: 40px;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 420;
+            margin-bottom: 0.9rem;
+            color: #1a2538;
+            letter-spacing: -0.015em;
+        }
+
+        .card p {
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+            color: #2d3a4f;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 强调色用于链接 */
+        a {
+            color: #a4353f;
+            text-decoration: none;
+            font-weight: 480;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #6d262d;
+            border-bottom: 1px solid #6d262d;
+        }
+
+        /* 页尾访问提示 —— 杂志脚注 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding: 1.8rem 0 0.8rem;
+            border-top: 1px solid #d1cdc1;
+            font-size: 0.95rem;
+            color: #4b5563;
+            text-align: center;
+            line-height: 1.6;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-note em {
+            font-style: normal;
+            background: #e2ded3;
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-right: 0.3rem;
+        }
+
+        .footer-note .hint {
+            display: inline-block;
+            margin: 0.2rem 0.4rem;
+        }
+
+        /* 响应式细节 */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 3rem 1rem 2.8rem;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .container {
+                padding: 1.2rem 1rem 2.5rem;
+            }
+            .card {
+                padding: 1.6rem 1.2rem 1.8rem;
+                border-radius: 20px;
+            }
+            .card h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+            .card {
+                padding: 1.2rem 0.9rem 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 深色头图 · 杂志横幅 -->
+    <header class="hero">
+        <h1>mk体育 · 资料索引笔记</h1>
+        <div class="sub">信息整理 ／ 档案式浏览 ／ 内容聚合</div>
+    </header>
+
+    <main class="container">
+        <div class="feature-grid">
+
+            <!-- 第一段：背景与原点 -->
+            <section class="card">
+                <span class="tag">📁 整理缘起</span>
+                <h2>从散落信息到结构化索引</h2>
+                <p>日常浏览体育资讯时，常遇到内容分散、来源不一的情况。一个赛季的数据、赛事规则变动、选手背景——这些信息需要比对和累积。 mk体育 的出发点很简单：为关注体育动态的人提供一个相对集中的资料索引，把不同渠道的信息按主题归档，减少重复查找的时间。</p>
+                <p>网站持续收录公开的赛事纪要、规则说明以及运动项目的基础数据，尝试让信息本身更易翻阅，而非制造新的信息噪音。</p>
+            </section>
+
+            <!-- 第二段：特点与场景 -->
+            <section class="card">
+                <span class="tag">🧩 索引特点</span>
+                <h2>按项目 / 赛季 / 术语分类</h2>
+                <p>资料组织围绕几个常见维度：不同运动项目的规则演变、近期赛事的简录、以及常用术语的对照说明。例如足球联赛的积分算法变更、田径项目的纪录沿革、格斗运动的体重级别划分——这些内容在 <a href="https://mkgrade.com.cn">mk体育</a> 中以独立条目或列表方式呈现，方便对照查阅。</p>
+                <p>对于偶尔想了解某项运动背景的读者，或是需要快速核实某个规则的爱好者，这种索引式的结构也许比泛泛的新闻流更直接。每一条目都标注了参考来源的时期，方便判断时效性。</p>
+            </section>
+
+            <!-- 第三段：应用方式与边界 -->
+            <section class="card">
+                <span class="tag">🌱 使用场景</span>
+                <h2>赛前准备 · 规则确认 · 兴趣延伸</h2>
+                <p>你可以把资料页当作一个起点：观看一场不太熟悉的比赛前，先查阅规则条目；读完一篇深度报道后，顺着索引找到相关赛季的数据；或者仅仅是在闲聊时确认某个纪录的细节。信息不求最新，但求经过梳理。</p>
+                <p>同时需要说明的是，索引内容主要基于公开可查的赛事资料与官方规则文件，不做过度解读或主观预测。体育世界变动很快，我们尽力保持条目与当下情况的同步，但仍建议以各项目官方机构的最新公告为最终依据。</p>
+            </section>
+        </div>
+
+        <!-- 页尾访问提示 · 杂志脚注风格 -->
+        <div class="footer-note">
+            <p><em>📎</em> 如果你正在寻找一个资料相对规整的体育信息集合点，不妨将 <a href="https://mkgrade.com.cn">mk体育</a> 加入书签。这里没有推送流，只有按主题排列的档案页与说明条目。</p>
+            <p class="hint">—— 适合安静翻阅的资料角落 · 内容持续补完中 ——</p>
+        </div>
+    </main>
+
+</body>
+</html>
